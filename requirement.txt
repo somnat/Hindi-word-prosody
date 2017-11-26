@@ -1,0 +1,8 @@
+#To run the W2P converter, one need to install following python packages
+
+1. sudo apt-get install python-pip
+2. sudo pip install python-tk
+3. sudo pip install xlrd
+4. sudo pip install xlsxwriter
+
+
