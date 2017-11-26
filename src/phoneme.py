@@ -225,8 +225,7 @@ def Phoneme(entries):
              hindi_output1[i]=""
         if(hindi_output1[i]=="&"): 
              hindi_output1[i]="'"
-      
-    
+       
   hindi_output_syllab=""
   hindi_output_syllab=''.join(hindi_output1)
   hindi_output_syllab=hindi_output_syllab.replace("@",u'\u03c3\u02b7')
