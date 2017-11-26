@@ -11,4 +11,5 @@ def countvowel(hindi_output):
 	      countv +=1
 	  if not char in uvwl:
 	      countc+=1
+
     return countv,countc
