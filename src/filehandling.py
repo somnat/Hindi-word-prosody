@@ -23,7 +23,6 @@ def load_file(entries):
   path=os.getcwd()
   fileoutput=open(path+"/"+"PLS_XML_W3C_Format_Lexicon.txt", 'aw')
   fileoutput1=open(path+"/"+"PLS_Festival_Format_Lexicon.txt", 'aw')
-  
   for word in fileinput:
            hindi_input=word.rstrip()
            entries['Hindi Input'].delete(0,END)
