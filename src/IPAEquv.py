@@ -188,7 +188,6 @@ def IPAEquivalent(entries):
             
 
         else:
-            
             entries['Underlying Phonemic Form'].delete(0, END)
             entries['Underlying Phonemic Form'].insert(0, hindi_output)
             
