@@ -42,7 +42,6 @@ def Phoneme(entries):
   hindi_output=(entries['Prosodic Label(PLSB)'].get()).rstrip()
   #hindi_output2 = Labelchanger1(hindi_output)
   hindi_output1=list(hindi_output)
-  print "phoneme", hindi_output1
   count_final_strong_syll=0
   final_strong_syll=[]
   for i in range(len(hindi_output1)):
@@ -109,11 +108,9 @@ def Phoneme(entries):
        countlabel+=1
   hindi_output_syllab=list(hindi_output_syllab)
   for i in range (len(hindi_output_syllab)):
-        #if((hindi_output_syllab[i]=="$" and i!=final_strong_syll[len(final_strong_syll)-1])  or hindi_output_syllab[i]=="&"):
-	    # hindi_output_syllab[i]="'" 
+       
         if(countlabel==2):
           if(hindi_output_syllab[i]=="@" and hindi_output_syllab[i+2]=="$"  ):
-             print"aao1"
              hindi_output_syllab[i]="1"
 	  elif(hindi_output_syllab[i]=="@"):
 	     hindi_output_syllab[i]="0"
@@ -122,13 +119,12 @@ def Phoneme(entries):
         if(countlabel==2):
          if(i+3!=""):
           if(hindi_output_syllab[i]=="@" and hindi_output_syllab[i+3]=="$"  ):
-             print"aao1"
+           
              hindi_output_syllab[i]="1"
 	  elif(hindi_output_syllab[i]=="@"):
 	     hindi_output_syllab[i]="0"
           if(hindi_output_syllab[i]=="$"): 
-             hindi_output_syllab[i]="0"
-          
+             hindi_output_syllab[i]="0"    
         if(countlabel>=3):
           if(hindi_output_syllab[i]=="$" and (hindi_output_syllab[i+2]=="$"  or hindi_output_syllab[i+2]=="@" or hindi_output_syllab[i+2]=="&" )):
              hindi_output_syllab[i]="1"
@@ -152,8 +148,7 @@ def Phoneme(entries):
   hindi_output_syllab="".join(hindi_output_syllab)
   hindi_output_syllab=hindi_output_syllab.replace("0",") (0 ")
   hindi_output_syllab=hindi_output_syllab.replace("1",") (1 ")
-  #hindi_output_syllab=hindi_output_syllab.replace("",") (1 ")
-  print "checking", hindi_output_syllab[0]
+ 
   if hindi_output_syllab[0]==")":
    hindi_output_syllab=hindi_output_syllab[1:]
    hindi_output_syllab=hindi_output_syllab+")"
@@ -176,8 +171,6 @@ def Phoneme(entries):
         hindi_output1[i]="'"
       
         
-    #LabelConverter(entries)
-    #print hindi_output_syllab
     hindi_output_syllab=''.join(hindi_output1)
     hindi_output_syllab=hindi_output_syllab.replace("@",u'\u03c3\u02b7')
     hindi_output_syllab=hindi_output_syllab.replace("$",u'\u03c3\u02b0')
@@ -187,12 +180,7 @@ def Phoneme(entries):
     
     entries['Phoneme Level(ASCII)'].delete(0,END)
     entries['Phoneme Level(ASCII)'].insert(0,hindi_output_syllab)
-  #countlabel=0
-  #for i in range(len(hindi_output1)):
-    
-    #if(hindi_output1[i]=="@" or hindi_output1[i]=="$" or hindi_output1[i]=="&"):
-      # countlabel+=1
-  #print "countlabel",countlabel
+  
 
   for i in range (len(hindi_output1)):
         if((hindi_output1[i]=="$" and i!=final_strong_syll[len(final_strong_syll)-1])  or hindi_output1[i]=="&"):
@@ -200,7 +188,7 @@ def Phoneme(entries):
         if(countlabel==2):
          if(i+2!=""):
           if(hindi_output1[i]=="@" and hindi_output1[i+2]=="$" ):
-             print"aao2"
+             
              hindi_output1[i]="'"
 	  elif(hindi_output1[i]=="@"):
 	     hindi_output1[i]=""
@@ -211,7 +199,7 @@ def Phoneme(entries):
         if(countlabel==2):
          if(i+3!=""):
           if(hindi_output1[i]=="@" and hindi_output1[i+3]=="$" ):
-             print"aao2"
+             
              hindi_output1[i]="'"
 	  elif(hindi_output1[i]=="@"):
 	     hindi_output1[i]=""

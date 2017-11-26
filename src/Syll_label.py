@@ -42,9 +42,8 @@ hindi_output1 = []
 def Labeling(entries):
     Syllabify(entries)
     hindi_output = (entries['I-Level Syllabification'].get()).rstrip()
-    hindi_output1=list(hindi_output)
-    #hindi_output2=Labelchanger1(hindi_output)
-    #print hindi_output1,hindi_output2
+    hindi_output2=Labelchanger1(hindi_output)
+    hindi_output1=list(hindi_output2)
     indexvowelsnew=[]
     newvowelindexes=[]
     countv, countc = countvowel(hindi_output1)
@@ -56,13 +55,11 @@ def Labeling(entries):
     else:
         newvowelindexes = list(set(hindi_output1) & set(uvwl1))
 
-        print "new vowel index", newvowelindexes
         for k in range(len(newvowelindexes)):
             for j in range(len(hindi_output1)):
                 if (newvowelindexes[k] == hindi_output1[j]):
                     indexvowelsnew.append(j)
                     indexvowelsnew.sort()
-        print "indexvowelsnew", indexvowelsnew
         countweight = []
         for k in range(len(indexvowelsnew)):
             for j in range(len(short_vowel)):
@@ -74,13 +71,10 @@ def Labeling(entries):
                     countweight.append(2)
 
         newpos = []
-        print "countweight",countweight
         for i in range(len(hindi_output1)):
             if hindi_output1[i] == ".":
                 newpos.append(i)
-        print "newpos", newpos
-        ###  Labeling module**************
-    hindi_output1=list(hindi_output)
+        
     for i in range(len(indexvowelsnew) - 1):
         if newpos[i] - indexvowelsnew[i] == 1 and countweight[i] == 1 and i == 0:
             hindi_output1.insert(0, "@")
@@ -222,7 +216,6 @@ def Labeling(entries):
             if (labelvowelindexes[k] == hindi_output1[j]):
                 labelindexvowels.append(j)
                 labelindexvowels.sort()
-        print "labelindexvowels", labelindexvowels
         labelcountweight = []
         for k in range(len(labelindexvowels)):
             for j in range(len(short_vowel)):
@@ -232,10 +225,7 @@ def Labeling(entries):
             for j in range(len(long_vowel)):
                 if (hindi_output1[labelindexvowels[k]] == long_vowel[j]):
                     labelcountweight.append(2)
-
-        print "labelcountweight", labelcountweight
     labelnewpos = []
-    print "hindi_output1", hindi_output1
     for i in range(len(hindi_output1)):
         if hindi_output1[i] == "$" or hindi_output1[i] == "@" or hindi_output1[i] == "*" or hindi_output1[i] == "&":
             labelnewpos.append(i)
@@ -257,8 +247,6 @@ def Labeling(entries):
     k_class = ["k", "K", "g", "G"]
     T_class = [u'\u0256', "Q", u'\u0288', u'\u02b1']
     O_class = ["c", "C", "5", "Z", "p", "P", "b", "B", "t", "T", "d", "D", u'\u0256', "Q", u'\u0288', u'\u02b1']
-    print "length of labelcountweight", len(labelcountweight)
-    print "labelnewpos", labelnewpos
     if len(labelcountweight) > len(labelnewpos):
         for i in range(len(labelcountweight) - 2):
             if (labelcountweight[i] <= labelcountweight[i + 1]):
@@ -440,7 +428,6 @@ def Labeling(entries):
     hindi_output1 = filter(bool, hindi_output1)
     
     if (countv > 1):
-        print "countv", countv
         for i in range(4):
             if (hindi_output1[len(hindi_output1) - 2] == "X" and hindi_output1[len(hindi_output1) - 1] == k_class[i]):
                 hindi_output1[len(hindi_output1) - 2] = u'\u014b'
@@ -459,7 +446,7 @@ def Labeling(entries):
 
 
 
-                ## *********** Anusvara-anunasika rule for monosyllabic words ****************
+              
     else:
         
         for k in range(len(hindi_output1) - 2):
@@ -510,8 +497,7 @@ def Labeling(entries):
 
 
 
-                    # *********** nasalazation in the last ********************************
-    print "hindi_output1[len(hindi_output)-2]", hindi_output1[len(hindi_output1) - 2]
+                    
     if (hindi_output1[len(hindi_output1) - 2] == "E" and hindi_output1[len(hindi_output1) - 1] == "X"):
         hindi_output1[len(hindi_output1) - 2] = "_"
         hindi_output1[len(hindi_output1) - 1] = ""

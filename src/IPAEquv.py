@@ -69,28 +69,23 @@ def IPAEquivalent(entries):
         for i in range((len(hindi_input))):
             for j in range(len(ucv)):
                 if ((hindi_input[i] == ucv[j] and i != length - 1) and (hindi_input[i + 1] == u'\u094d')):  # for halant
-                    print ("entered in the loop1")
                     temp = uipa[j].replace(u'\u0259', "")
                     hindi_output = hindi_output + temp
                     i = i + 1
 
                 if ((hindi_input[i] == ucv[j] and i != length - 1) and (hindi_input[i + 1] == u'\u0943')):  # for ri
-                    print ("entered in the loop2")
                     temp = uipa[j].replace(u'\u0259', "")
                     hindi_output = hindi_output + temp + "ri"
                     i = i + 1
 
                 if ((hindi_input[i] == ucv[j] and i != length - 1) and (
                         hindi_input[i + 1] == u'\u0903' and i + 1 == length - 1)):  # for visarg
-                    print ("entered in the loop3")
                     temp = uipa[j]
                     hindi_output = hindi_output + temp + "h"
-                    print hindi_output
                     i = i + 1
 
                     # replacing schwa before vowels
                 if (hindi_input[i] == ucv[j]):
-                    print ("entered in the loop8")
                     hindi_output = hindi_output + (uipa[j])
                     hindi_output = hindi_output.replace(u'\u0259u', "u")
                     hindi_output = hindi_output.replace(u'\u0259i', "i")
@@ -107,8 +102,6 @@ def IPAEquivalent(entries):
                     hindi_output = hindi_output.replace(u'4', "e:")
         hindi_output_ipa = []
         hindi_output_ipa = list(hindi_output)
-        # hindi_output_ipa.append(" ")
-        print (hindi_output_ipa)
         for i in range(1, len(hindi_output_ipa)):
             if (hindi_output_ipa[i - 1] == u'^' and (hindi_output_ipa[i] == u'p' or hindi_output_ipa[i] == u'b')):
                 hindi_output_ipa[i - 1] = "X"  
@@ -151,8 +144,7 @@ def IPAEquivalent(entries):
             if (hindi_output_ipa[i - 2] == u'e' and hindi_output_ipa[i - 1] == u':' and hindi_output_ipa[i] == u'^'):
                 hindi_output_ipa[i] = "X"
             if (hindi_output_ipa[i - 2] == u'\xe6' and hindi_output_ipa[i - 1] == u':' and hindi_output_ipa[i] == u'^'):
-                # hindi_output_ipa[i-2]=(u'\xe6\u0303:')
-                # hindi_output_ipa[i-1]=""
+               
                 hindi_output_ipa[i] = "X"
             if (hindi_output_ipa[i - 2] == u'a' and hindi_output_ipa[i - 1] == u':' and hindi_output_ipa[i] == u'^'):
                 hindi_output_ipa[i] = "X"
@@ -196,7 +188,7 @@ def IPAEquivalent(entries):
             
 
         else:
-            print hindi_output
+            
             entries['Underlying Phonemic Form'].delete(0, END)
             entries['Underlying Phonemic Form'].insert(0, hindi_output)
             

@@ -39,8 +39,6 @@ def Syllabify(entries):
  for word in hindi_input_array1: 
   hindi_output=word
   hindi_output=Labelchanger1(hindi_output)
-  print "hindi_output"
-  print hindi_output
   countv,countc=countvowel(hindi_output)
   global consonantindexes
   consonantindexes=[]
@@ -53,34 +51,21 @@ def Syllabify(entries):
   global indexconsonants
   indexconsonants=[]
   vowelindexes=list(set(hindi_output) & set(uvwl1))
-  print "vowelindexes"	
-  print (vowelindexes)
   consonantindexes=list(set(hindi_output).difference(set(uvwl1)))
-  print "consonantindexes"
-  print (consonantindexes)
-  print "indexvowels"
-  print (indexvowels)
   for k in range(len(vowelindexes)):
 	  for j in range(len(hindi_output)):
 	      if (vowelindexes[k]==hindi_output[j]):
 		  indexvowels.append(j)
 		  indexvowels.sort()
-  print "vowelindex"	  
-  print (indexvowels)
   for k in range(len(consonantindexes)):
 	  for j in range(len(hindi_output)):
 	      if (consonantindexes[k]==hindi_output[j]):
 		  indexconsonants.append(j)
 		  indexconsonants.sort()
-  print "consonantindex"
-  print (indexconsonants)
   global pos
-  pos=[]
-  print (countv) 
-  print (countc)	
+  pos=[]	
    
   hindi_output=Labelchanger2(hindi_output)
-  print hindi_output
   if (countv==1):
         entries['I-Level Syllabification'].delete(0,END)
 	entries['I-Level Syllabification'].insert(0,hindi_output)
@@ -89,8 +74,7 @@ def Syllabify(entries):
          
 	hindi_output=Labelchanger1(hindi_output)
         for k in range(1,len(indexvowels)):
-	      print ("value of 1+k")
-	      print (1+k)
+	      
 	      if((indexvowels[k]-indexvowels[k-1])==2 or (indexvowels[k]-indexvowels[k-1])==1):
 		    
 		      pos += [indexvowels[k-1]]
@@ -102,18 +86,13 @@ def Syllabify(entries):
 		      
 	      if((indexvowels[k]-indexvowels[k-1]) == 5 or (indexvowels[k]-indexvowels[k-1]) == 6):
 		      pos += [(indexvowels[k-1]) +2]
-  print (pos)
+  
   length_pos=len(pos)
-  print ("length of pos:") 
-  print (length_pos)
   for i in range(length_pos):
     pos[i]+=i+1
-  print "syllable boundary"
-  print (pos)
   global hindi_output1
   hindi_output1=[]
   hindi_output1=list(hindi_output)
-  print (hindi_output1)
   
   for i in range(0,length_pos):
     hindi_output1.insert(pos[i],'.')
@@ -124,19 +103,14 @@ def Syllabify(entries):
               temp=hindi_output1[i+1]
               hindi_output1[i+1]=hindi_output1[i]
               hindi_output1[i]=temp
-              
-  print hindi_output1           
+                        
   del pos[:]
   for i in range(0,len(hindi_output1)):
     if hindi_output1[i]==".":
        pos.append(i)
-       print i
-  print "new pos becomes=" 
-  print pos 
+        
   hindi_output_syll=''.join(hindi_output1)
   hindi_output_syll=Labelchanger2(hindi_output_syll)
-  print "hindi_output_syll"
-  print hindi_output_syll
   if(flag>=1):
     hindi_output_syll=temp+hindi_output_syll
   flag+=1
@@ -145,8 +119,6 @@ def Syllabify(entries):
   temp=hindi_output_syll+" "
   for i in range(len(indexconsonants)):
     indexconsonants[i]+=i
-  print "new indexconsonant"
-  print indexconsonants
   
  ########################################  End of Syllabification ########################################################################
 
