@@ -29,5 +29,6 @@ def Labelchanger1(hindi_output):
     hindi_output = hindi_output.replace(u'a\u0303:', "=")
     hindi_output = hindi_output.replace(u'o\u0303:', "7")
     hindi_output = hindi_output.replace(u'\u0259\u0303', u'`')
+
     return hindi_output
 
