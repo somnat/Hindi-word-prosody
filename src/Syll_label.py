@@ -38,7 +38,6 @@ hindi_output = []
 global hindi_output1
 hindi_output1 = []
 
-
 def Labeling(entries):
     Syllabify(entries)
     hindi_output = (entries['I-Level Syllabification'].get()).rstrip()
