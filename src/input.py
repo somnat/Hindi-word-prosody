@@ -16,7 +16,6 @@ from filehandling import load_file
 from phoneme import Phoneme
 reload(sys)
 sys.setdefaultencoding('utf-8')
-
 fields = ('Hindi Input', 'IPA Equivalent', 'Underlying Phonemic Form', 'I-Level Syllabification', 'Prosodic Label(PLSB)',
 'Phoneme Level(IPA)', 'Phoneme Level(ASCII)')
 
