@@ -23,7 +23,6 @@ uc = [u'p', u'b', u't', u'd', u'\u0288', u'\u0256', u't\u0283', u'd\u0292', u'k'
 
 ustop = [u'p', u'b', u't', u'k', u'd', u'g', u'P', u'K', u'G', u'D']
 ucp = ["P", "B", "T", "D", "Q", "C", "c", "Z", "5", "K", "R", "G"]
-
 def Syllabify(entries):
  IPAEquivalent(entries)
  hindi_output = (entries['Underlying Phonemic Form'].get()) 
