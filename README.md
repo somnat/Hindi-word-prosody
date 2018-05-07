@@ -9,10 +9,28 @@ For example: कमला becomes 'kam.la: where "." is the syllable boundary an
 
 #### More details can be found in the following paper. 
 
-https://cdn.iiit.ac.in/cdn/ltrc.iiit.ac.in/icon2017/proceedings/icon2017/pdf/W17-7502.pdf
 
-If you are using the above software in your research work then cite  the above paper.
 
+
+# Citations
+
+Please cite Hindi-Word-Prosody-Hindi-G2P in your publications if it helps your research.
+The following is a [BibTeX](http://www.bibtex.org/) and plaintext reference for our
+[Hindi-Word-Prosody-G2P](https://cdn.iiit.ac.in/cdn/ltrc.iiit.ac.in/icon2017/proceedings/icon2017/pdf/W17-7502.pdf).
+
+```
+@InProceedings{roy:2017:W17-75,
+  author    = {Roy, Somnath},
+  title     = {Deriving Word Prosody from Orthography in Hindi},
+  booktitle = {Proceedings of the 14th International Conference on Natural Language Processing (ICON-2017)},
+  month     = {December},
+  year      = {2017},
+  address   = {Kolkata, India},
+  publisher = {NLP Association of India},
+  pages     = {2--12},
+  url       = {http://www.aclweb.org/anthology/W/W17/W17-7502}
+}
+```
 ### How to run the library.
 
 - - sudo pip install -r requirement.txt
