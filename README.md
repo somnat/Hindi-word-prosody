@@ -1,5 +1,5 @@
 # Hindi-Word-Prosody-Hindi-G2P
-- - Pronunciation lexicon or dictionary is one of the essential resource for building a Speech-to-Text(STT)  or Text-to-Speech (TTS). 
+- - Pronunciation lexicon is one of the essential resource for building a Speech-to-Text(STT)  or Text-to-Speech (TTS). 
 - - This library is intended for generating the phonemic sequence for a given Hindi graphemic input along with its word-level prosodic structure. 
 - - The prosodic structure includes the syllable boundaries as well as the syllable weight.
 - - The Heavy and Super heavy syllables are generally the stressed syllables. However, in some cases heavy syllables are not stressed. The above library includes all the rules to correctly capture the prosodic structure.
