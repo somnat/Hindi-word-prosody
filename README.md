@@ -16,7 +16,7 @@ For example: कमला becomes 'kam.la: where "." is the syllable boundary an
 
 Please cite Hindi-Word-Prosody-Hindi-G2P in your publications if it helps your research.
 The following is a [BibTeX](http://www.bibtex.org/) and plaintext reference for our
-[Hindi-Word-Prosody-G2P](https://cdn.iiit.ac.in/cdn/ltrc.iiit.ac.in/icon2017/proceedings/icon2017/pdf/W17-7502.pdf).
+[Hindi-Word-Prosody](https://cdn.iiit.ac.in/cdn/ltrc.iiit.ac.in/icon2017/proceedings/icon2017/pdf/W17-7502.pdf).
 
 ```
 @InProceedings{roy:2017:W17-75,
