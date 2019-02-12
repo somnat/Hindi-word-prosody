@@ -3,7 +3,7 @@
 - - This library is intended for generating the phonemic sequence for a given Hindi graphemic input along with its word-level prosodic structure. 
 - - The prosodic structure includes the syllable boundaries as well as the syllable weight.
 - - The Heavy and Super heavy syllables are generally the stressed syllables. However, in some cases heavy syllables are not stressed. The above library includes all the rules to correctly capture the prosodic structure.
-- - Hindi is a morphologically rich language. Therefore, all derived words and compound words delete schwa at morphological boundaries. Most of the work on the Hindi G2P either needs the morphological information. However, the current library is autonomus to those boundaries and generates correct form in most of the cases.
+- - Hindi is a morphologically rich language. Therefore, all derived words and compound words delete schwa at morphological boundaries.
 
 For example: कमला becomes 'kam.la: where "." is the syllable boundary and ' specifies the stressed syllable.
 
@@ -14,7 +14,7 @@ For example: कमला becomes 'kam.la: where "." is the syllable boundary an
 
 # Citations
 
-Please cite Hindi-Word-Prosody-Hindi-G2P in your publications if it helps your research.
+Please cite Hindi-Word-Prosody in your publications if it helps your research.
 The following is a [BibTeX](http://www.bibtex.org/) and plaintext reference for our
 [Hindi-Word-Prosody](https://cdn.iiit.ac.in/cdn/ltrc.iiit.ac.in/icon2017/proceedings/icon2017/pdf/W17-7502.pdf).
 
