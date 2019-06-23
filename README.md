@@ -38,3 +38,5 @@ The following is a [BibTeX](http://www.bibtex.org/) and plaintext reference for 
 - - python input.py
 
 #### Step 2 will generate GUI and user can feed the words or files as input and the output will generated in GUI as well as in the form a text file.
+
+#### Step 3 for batch mode the please click on the fileinputoutput button and choose your file. Your file should contain only one word per line.
