@@ -33,6 +33,7 @@ The following is a [BibTeX](http://www.bibtex.org/) and plaintext reference for 
 ```
 ### How to run the library.
 
+- - sudo apt-get install python-tk
 - - sudo pip install -r requirement.txt
 - - python input.py
 
